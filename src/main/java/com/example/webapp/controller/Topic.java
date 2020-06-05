@@ -4,17 +4,17 @@ public class Topic {
 
 
 
-    private String topic , topicName , topicDesription;
+    private String topic , topicName , topicDescription;
 
     public Topic() {
 
     }
 
-    public Topic(String topic, String topicName, String topicDesription) {
+    public Topic(String topic, String topicName, String topicDescription) {
         super();
         this.topic = topic;
         this.topicName = topicName;
-        this.topicDesription = topicDesription;
+        this.topicDescription = topicDescription;
     }
 
     public String getTopic() {
@@ -33,11 +33,11 @@ public class Topic {
         this.topicName = topicName;
     }
 
-    public String getTopicDesription() {
-        return topicDesription;
+    public String getTopicDescription() {
+        return topicDescription;
     }
 
-    public void setTopicDesription(String topicDesription) {
-        this.topicDesription = topicDesription;
+    public void setTopicDescription(String topicDescription) {
+        this.topicDescription = topicDescription;
     }
 }

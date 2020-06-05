@@ -10,11 +10,11 @@ import java.util.List;
 @Service
 public class TopicService {
 
-    private List<Topic> topics = Arrays.asList(
+    private List<Topic> topics = new ArrayList<Topic>(Arrays.asList(
       new Topic("Java" , "Core Java", "Core Java Learning Tutorials"),
       new Topic("Spring" , "Spring Boot","Spring Boot Tutorials"),
       new Topic("C++" , "Standard Template Libraries","STL Tutorials")
-    );
+    ));
 
 
     public TopicService() {
@@ -33,5 +33,29 @@ public class TopicService {
             }
         }
         return fetchList;
+    }
+
+    public void addTopic(Topic topic) {
+        topics.add(topic);
+    }
+
+    public void updateTopic(String id , Topic topic) {
+        for(Topic t : topics) {
+            if(t.getTopic().equals(id)) {
+               t.setTopic(topic.getTopic());
+               t.setTopicName(topic.getTopicName());
+               t.setTopicDescription(topic.getTopicDescription());
+               return;
+            }
+        }
+    }
+
+    public void deleteTopic(String id) {
+        for(Topic t : topics) {
+            if(t.getTopic().equals(id)) {
+                topics.remove(t);
+                return;
+            }
+        }
     }
 }
